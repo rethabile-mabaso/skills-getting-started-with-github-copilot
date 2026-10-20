@@ -5,6 +5,7 @@ A super simple FastAPI application that allows students to view and sign up for 
 ## Features
 
 - View all available extracurricular activities
+- See the students currently signed up for each activity
 - Sign up for activities
 
 ## Getting Started
@@ -25,12 +26,27 @@ A super simple FastAPI application that allows students to view and sign up for 
    - API documentation: http://localhost:8000/docs
    - Alternative documentation: http://localhost:8000/redoc
 
+## Running Backend Tests
+
+Install the project dependencies, including pytest:
+
+```
+pip install -r requirements.txt
+```
+
+From the repository root, run:
+
+```
+python -m pytest
+```
+
 ## API Endpoints
 
 | Method | Endpoint                                                          | Description                                                         |
 | ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Get all activities with their details and current participant count |
 | POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
+| DELETE | `/activities/{activity_name}/signup?email=student@mergington.edu` | Remove a participant from an activity                                |
 
 ## Data Model
 
